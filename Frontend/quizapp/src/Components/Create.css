@@ -1,0 +1,136 @@
+.cbox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+}
+
+
+
+.cinnerbox{
+    margin: 2rem;
+
+    width: 600px;
+    max-width: 100%;
+    height: auto;
+    background-color: rgba(206, 94, 246, 0.118);
+    border-radius: 30px;
+    box-shadow: rgba(57, 57, 106, 0.25) 0px 50px 100px -20px, rgba(83, 4, 132, 0.3) 0px 30px 60px -30px, rgba(80, 12, 39, 0.35) 0px -2px 6px 0px inset;
+}
+.round{
+    height: 4rem;
+    width: 4rem;
+    background-color: #47a6e6;
+    border-radius: 50%;
+    border: 8px white solid;
+    padding: 1rem;
+    margin-inline: auto;
+    transform: translateY(-2rem);
+}
+.clogoimg{
+    height: 100%;
+    width: auto;
+}
+.boxs{
+    position: relative;
+    padding: 3rem;
+    height: auto;
+    
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.input {
+    padding: 10px;
+   width: 80px;
+    height: 80px;
+    background: none;
+    border: 4px solid #730791;
+    border-radius: 50px;
+    box-sizing: border-box;
+    font-size: 26px;
+    color: #ffffff;
+    outline: none;
+    transition: .5s;
+}
+.boxs:hover input{
+    width: 400px;
+    background: #47a6e657;
+    border-radius: 30px;
+    max-width: 100%;
+    
+}
+.boxs img{
+    height: 2rem;
+    width: auto;
+}
+.boxs .i{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 26px;
+    color: #000000;
+    transition: .2s;
+}
+.boxs:hover .i{
+    opacity: 0;
+    z-index: -1;
+}
+.btn img{
+    height: 2rem;
+    width: 2rem;
+    object-fit: contain;
+}
+.btn {
+    height: 4rem;
+    width: 4rem;
+    display: none;
+   margin-top: 1rem;
+    background-color: #4d095e;
+    color: white;
+   
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 50%;
+    border: 4px white solid;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  
+  .boxs:hover .btn {
+    display: block;
+  }
+
+.gbtn{
+    background-color: #4d095e;
+    padding: 2rem;
+    border: 2px #47a6e6 solid;
+    border-radius: 50px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+  @media screen and (max-width: 768px) {
+    h2{
+        font-size: 1rem;
+    }
+    h1{
+        font-size: 1.5rem;
+    }
+    .boxs{
+        padding: 1rem;
+    }
+    .input{
+        height: 4rem;
+        width: 4rem;
+        font-size: 0.8rem;
+       
+        border-radius: 50px;
+    }
+  }

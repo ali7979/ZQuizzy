@@ -1,0 +1,113 @@
+.outerbox{
+    padding: 8rem 3rem;
+    margin-inline: 4rem;
+}
+.inner{
+   background-color:#ffffffce;
+
+    display: flex;
+  justify-content:center;
+  align-items: center;
+  gap: 2rem 0rem;
+  padding: 1rem ;
+  height: 60vh;
+    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+    border-radius: 30px;
+   
+}
+.imagecontainer{
+    height: 100%;
+    width: auto;
+    
+}
+.textcontainer{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    
+    align-items: start;
+    
+}
+.textcontainer h1{
+font-size: 2.5rem;
+
+}
+.textcontainer p{
+
+margin-inline:0.3rem ;
+    font-size: larger;
+    letter-spacing: 2.5px;
+    font-weight: 300;
+    color: #39313ace;
+}
+.imagecontainer img{
+height: 80vh;
+width: 100%;
+object-fit: contain;
+transform: translateY(-14vh);
+filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5)); /* Adds shadow */
+}
+
+
+
+
+
+@media screen and (max-width: 768px) {
+    .outerbox{
+        padding: 2rem 1rem;
+        margin-inline: 0rem;
+    }
+    .inner{
+      
+    
+        
+        flex-direction: column;
+      gap: 0rem;
+     
+      padding: 1rem ;
+      height: 100%;
+        box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+        border-radius: 30px;
+       
+    }
+    .imagecontainer{
+        height: 50%;
+        width: auto;
+        text-align: center;
+
+        
+    }
+    .textcontainer{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        transform: translateY(-2rem);
+        align-items: start;
+        
+    }
+    .textcontainer h1{
+        width: 100%;
+    font-size: 1.5rem;
+    text-align: center;
+    
+    }
+    .textcontainer p{
+    
+    margin-inline:0.5rem !important;
+        font-size: 0.6rem;
+        letter-spacing: 2px;
+        text-align:justify;
+        font-weight: 300;
+        color: #39313ace;
+    }
+    .imagecontainer img{
+    height: 80%;
+    width: 80%;
+    object-fit: contain;
+    
+    transform: translateY(-3rem);
+    filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5)); /* Adds shadow */
+    }
+    
+
+}

@@ -1,0 +1,841 @@
+@import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+  font-family: "Sour Gummy", serif;
+  font-optical-sizing: auto;
+  
+  font-style: normal;
+}
+body{
+  padding-inline: 2rem;
+  background-color: #e1b6f718;
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #47a6e6;
+  cursor: pointer;
+}
+
+
+.form-input {
+  display: flex;
+  height: 2rem;
+  width: 15rem;
+  min-width: 0;
+padding: 0.5rem ;
+  resize: none;
+  overflow: hidden;
+  border-radius: 20px; /* Rounded corners */
+  background-color: #e2e5e7; /* Light gray background */
+  color: #111517; /* Text color */
+  border: none; /* No border */
+  
+  padding-left:1rem; /* Inner padding */
+  padding-right: 1rem; /* Right padding */
+  font-size: 1rem; /* Base font size */
+  font-weight: normal;
+  line-height: normal;
+  placeholder {
+    color: #647987; /* Placeholder color */
+  }
+}
+
+.form-input:focus {
+  outline: none; /* Remove focus outline */
+
+  border: none; /* No border on focus */
+}
+
+
+.logo{
+  display: flex;
+  align-items: center;
+  font-size: 2.5rem;
+}
+.logo img{
+ height: 4rem;
+ margin-right: 0.5rem;
+}
+
+
+.loading{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  position:absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #47a6e66a;
+  backdrop-filter: blur(0.8px);
+  
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: fit-content;
+  font-weight: bold;
+ 
+  font-size: 50px;
+  background: radial-gradient(circle closest-side,#47a6e6 94%,#0000) right/calc(200% - 1em) 100%;
+  animation: l24 1s infinite alternate linear;
+}
+.loader::before {
+  content: "ZQuizzy";
+  line-height: 1em;
+  color: #31015200;
+  background: inherit;
+  background-image: radial-gradient(circle closest-side,#fff 94%,#000);
+  -webkit-background-clip:text;
+          background-clip:text;
+}
+
+@keyframes l24{
+  100%{background-position: left}
+}
+.box{
+  height: 75vh;
+  min-height: 50vh;
+  background-color: rgba(238, 178, 238, 0.226);
+  margin: 0.5rem 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+
+  
+}
+
+.box2{
+  margin: 2rem 3rem;
+}
+
+.cards{
+  display: flex;
+  padding: 1.5rem 1rem;
+  overflow: scroll;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  scroll-snap-type: x mandatory;
+  align-items: center;
+  
+}
+.cards::-webkit-scrollbar {
+  display: none;
+}
+.cardb{
+  margin-right: 2.5rem;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  transform: translateY(20px);
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out forwards;
+
+  scroll-snap-align: center;
+}
+
+.cardb:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.cardb:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.cardb:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.cardb:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+.cardb:nth-child(5) {
+  animation-delay: 0.8s;
+}
+
+.cardb:nth-child(6) {
+  animation-delay: 0.9s;
+}
+.cardb:nth-child(7) {
+  animation-delay: 0.10s;
+}
+.cards:hover .cardb {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.cardb h3{
+  font-weight: 400;
+  margin-left: 0.1rem;
+  
+}
+
+.card{
+  min-height: 12rem;
+  height:12rem;
+  min-width: 14rem !important;
+  width:14rem;
+background-color: rgba(238, 178, 238, 0.116);;
+  color: #47a6e6;
+  border-radius: 10px;
+  animation: floatIn 0.5s ease-in-out forwards;
+  box-sizing: border-box;
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  
+}
+  
+  .card:hover {
+  transform: translateY(-10px) scale(1.1)  !important; /* Moves the card slightly up and scales it */
+  background-color: #47a6e6;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+cursor: pointer;
+}
+
+
+.card img{
+  height: 100%;
+  width: 100%;
+ object-fit: contain;
+}
+
+.card:hover img {
+  transform: scale(1.05); /* Slight zoom on the image */
+  transition: transform 0.3s ease-in-out;
+  filter: brightness(0);
+}
+@keyframes fadeIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+/* Adding animation for cards */
+@keyframes floatIn {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+
+
+
+.who-we-are {
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  gap: 4rem;
+  padding: 2rem ;
+  font-family: Arial, sans-serif;
+  height: 60vh; /* Ensures the section spans full viewport height */
+ 
+  
+}
+
+
+
+.who-we-are h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  background-color: #47a6e6;
+  border-radius: 50%;
+  padding: 0.8rem;
+}
+
+.icon img {
+  width: 100%;
+  height: 100%;
+}
+
+
+
+.team-image {
+  height: 100vh;
+  border-radius: 10px;
+  transform: translateY(-30px);
+  
+
+  /* Animation triggered when scrolled into view */
+ 
+}
+
+
+/* Alternative Trigger (Using Scroll Effects) */
+
+
+
+
+
+
+
+.headings h1{
+  font-size: 6vw;
+  margin-bottom: -1rem;
+}
+.headings h3{
+  font-size: 2vw;
+font-weight: 200;
+}
+
+.btnset{
+  display: flex;
+justify-content:center;
+}
+.btnset button{
+  margin: 1rem 0.5rem;
+}
+
+
+
+/* CSS */
+.button-77 {
+  align-items: center;
+  appearance: none;
+  background-clip: padding-box;
+  background-color: initial;
+  background-image: none;
+  border-style: none;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  flex-direction: row;
+  flex-shrink: 0;
+  
+  font-size: 16px;
+  font-weight: 800;
+  justify-content: center;
+  line-height: 24px;
+  margin: 0;
+  min-height: 64px;
+  outline: none;
+  overflow: visible;
+  padding: 19px 26px;
+  pointer-events: auto;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  width: auto;
+  word-break: keep-all;
+  z-index: 0;
+}
+
+
+/* QuizPAge */
+.upload-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+  height: 60vh;
+  justify-content: center;
+}
+
+.upload-container {
+  width: 450px;
+  border: 2px dashed #47a6e6;
+  border-radius: 8px;
+  padding:  2rem;
+  margin: 1rem;
+  text-align: center;
+  background-color: #ffffff;
+  box-shadow: rgba(2, 34, 95, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;}
+
+.file-upload-label {
+  display: block;
+  padding: 30px;
+  cursor: pointer;
+  color: #6c757d;
+  border: none;
+  outline: none;
+  letter-spacing: 2px;
+}
+
+.uploadicon{
+  height: 100px;
+}
+.file-input {
+  display: none;
+}
+
+.upload-button {
+  margin-top: 2.5rem !important;
+  padding: 10px 20px;
+  background-color: #47a6e6;
+  color:#f0f3f4;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 2.5px;
+  font-weight: 700;
+  font-size: 0.8rem;
+box-shadow: rgba(2, 34, 95, 0.3) -1px 5px 15px 2px, rgba(0, 0, 0, 0.22) 0px 15px 12px;;}
+.fetch{
+  background-color: rgba(188, 186, 186, 0.153);
+  color: #47a6e6;
+}
+
+.upload-button img{
+  height: 32px;
+}
+
+
+.upload-button:hover {
+  background-color: #0056b3;
+}
+
+.file-list {
+  margin-top: 20px;
+  width: 400px;
+}
+
+.file-item {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 5px 0;
+}
+
+.progress-bar {
+  width: 400px;
+  margin-top: 20px;
+  background-color: #e9ecef;
+  border-radius: 4px;
+  overflow: hidden;
+  height: 10px;
+}
+
+.progresss {
+  height: 100%;
+  background-color: #007bff;
+  transition: width 0.4s;
+}
+
+
+
+.Questionbox
+{
+  width: 60vw;
+  margin: 5rem auto;
+}
+
+
+
+.progress{
+  margin-inline: 10rem;
+  height: 10px;
+  border-radius: 30px;
+  background-color: rgba(217, 79, 245, 0.123);
+
+}
+.progress2{
+  background-color: #47a6e6;
+  height: 100%;
+  
+  border-radius: 30px;
+}
+
+
+
+.section1{
+  height:70vh ;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+
+
+  background-color: #ffffff;
+  border-top-left-radius: 15em 15em;
+  border-top-right-radius: 2em 2em;
+  padding: 7rem 5rem;
+
+}
+.section1 button{
+  padding: 2rem 3rem;
+  border-radius: 50px;
+  background-color: #fff;
+  border:  #47a6e6 2px solid ;
+color: #94989b;
+font-weight: 500;
+letter-spacing: 2px;
+margin-top: 2rem;
+font-size: large;
+}
+.section1 button:hover{
+ background-color: #0f3a57;
+ color: #fff;
+}
+
+
+
+
+/* PHONEEEEEEEEEEE */
+
+
+@media (min-width: 768px) {
+  .button-77 {
+    padding: 19px 32px;
+  }
+}
+
+.button-77:before,
+.button-77:after {
+  border-radius: 80px;
+}
+
+.button-77:before {
+  background-color: #47a6e654;
+  content: "";
+  display: block;
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -2;
+}
+
+.button-77:after {
+  background-color: initial;
+  background-image: linear-gradient(92.83deg, #db26ff 0, #47a6e6 100%);
+  bottom: 4px;
+  content: "";
+  display: block;
+  left: 4px;
+  overflow: hidden;
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  transition: all 100ms ease-out;
+  z-index: -1;
+}
+
+.button-77:hover:not(:disabled):after {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  transition-timing-function: ease-in;
+}
+
+.button-77:active:not(:disabled) {
+  color: #ccc;
+}
+
+.button-77:active:not(:disabled):after {
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), linear-gradient(92.83deg, #c647e6 0, #47a6e6 100%);
+  bottom: 4px;
+  left: 4px;
+  right: 4px;
+  top: 4px;
+}
+
+.button-77:disabled {
+  cursor: default;
+  opacity: .24;
+}
+
+
+.bx{
+  display: flex;
+  justify-content: center;
+}
+
+.gbtn img{
+  height: 2rem;
+  width: 2rem;
+  object-fit: contain;
+  margin-right: 0.5rem;
+}
+
+ 
+.gbtn {
+    height: 6rem;
+    width: 16rem;
+   
+   margin-top: 1rem;
+    background-color: #4d095e;
+    color: white;
+   padding: 0;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 30px;
+    border: 4px white solid;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+ 
+  body{
+    padding: 0.2rem;
+  }
+  .logo{
+   
+    font-size: 1.5rem;
+  }
+  .logo img{
+   height: 2rem;
+  }
+  .header{
+   flex-direction: column;
+   margin-bottom: 2rem;
+   justify-content: space-between;
+  }
+  .box{
+    
+    height: 30vh;
+    margin: 0.2rem;
+  }
+  .box2{
+    margin: 0.2rem ;
+    margin-top: 1rem;
+  }
+  .box2 h2{
+    font-size: larger;
+  }  
+
+  .headings h1{
+    font-size: 8vw;
+  }
+
+  .headings h3{
+    font-size: 0.8rem;
+  }
+
+  .btnset{
+    flex-direction: column;
+   align-items: center;
+   justify-content:safe
+  }
+  .button-77 {
+    display: flex;
+ 
+    width: 10rem;
+    min-height: 2px;
+    height: 10px;
+    line-height: 10px;
+    font-size: 10px;
+    
+  }
+.Questionbox{
+  width: 85vw;
+  margin: 0.5rem auto;
+}
+.progress{
+  margin-inline: 0.5rem;
+}
+
+.imgbox{
+  height: 5rem !important;
+}
+
+.section1{
+  height: auto;
+  border-top-left-radius: 2.5em 2.5em;
+  border-top-right-radius: 0.5em 0.5em;
+  padding: 2rem 3rem;
+  
+
+}
+.section1 h2{
+  font-size: 1rem !important;
+}
+
+.section1 p{
+  font-size: 0.5rem !important;
+}
+.section1 button{
+  padding:  0.5rem;
+  border-radius: 50px;
+  background-color: #fff;
+  border:  #47a6e6 2px solid ;
+color: #94989b;
+font-weight: 500;
+margin-top: 1rem;
+font-size: smaller;
+}
+
+.who-we-are{
+  display: flex;
+  align-items: center;
+  gap: 0rem;
+  height: 60svh;
+  padding: 0.2rem;
+}
+.who-we-are h1 {
+  font-size: 1.2rem !important; 
+ 
+  margin-bottom: 0.5rem; 
+  letter-spacing: 1px; 
+}
+
+
+.features {
+  gap: 0.5rem; 
+}
+
+.feature {
+  flex-direction: column; 
+  align-items: flex-start; 
+  gap: 0.2rem; /* Adjust gap */
+}
+
+.feature p {
+  margin-top: -0.5rem;
+}
+.icon {
+  width: 20px; /* Reduce icon size */
+  height: 20px;
+  padding: 0.4rem;
+}
+
+.team-image {
+ /* Adjust image height for mobile screens */
+  transform: translateY(0); /* Remove vertical translation for better alignment */
+  margin-top: 1rem; /* Add margin for spacing */
+ 
+  border-radius: 5px; /* Reduce border radius for smaller screens */
+}
+.image {
+  width: 100svw;
+}
+.image img{
+  width: 100%;
+  height: 100%;
+}
+.content{
+  font-size: 50%;
+}
+
+
+.cards{
+  
+  padding:  1rem;
+  
+  
+}
+.cards::-webkit-scrollbar {
+  display: none;
+}
+.cardb{
+  margin-right: 1.5rem;
+ 
+}
+
+
+.cardb h3{
+  font-size: 0.7rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+.card{
+  min-height: 6rem;
+  height:6rem;
+  min-width: 7rem !important;
+  width:7rem;
+
+}
+.card:hover {
+  transform: translateY(-10px) scale(1.1)  !important; /* Moves the card slightly up and scales it */
+  
+  box-shadow: 0 10px 20px rgba(44, 1, 61, 0.3); /* Adds a shadow */
+}
+.btnset button{
+  margin: 0.4rem 0.5rem;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+
+}
+
+.headings h3{
+  margin: 1rem 1.5rem;
+  text-align: justify;
+  padding-top: 0.5rem;
+  letter-spacing: 2px;
+}
+.upload-container{
+  width: 80%;
+padding: 1rem;
+font-size: 0.8rem;
+  
+}
+body{
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+.who-we-are {
+  
+overflow: hidden;
+ 
+ 
+}
+footer p {
+  font-size: 0.7rem;
+}
+}

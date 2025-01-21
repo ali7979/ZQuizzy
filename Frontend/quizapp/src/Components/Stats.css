@@ -1,0 +1,87 @@
+.stats
+{   
+    
+    margin-top: 10vh;
+    padding: 3rem 5rem;
+    
+   
+}
+.stats h1{
+    font-size: 3rem;
+   letter-spacing: 2px;
+   text-align:center;
+   font-weight:500;
+   
+}
+
+.set{
+    padding: 4rem;
+    padding-top: 1rem;
+    display: flex;
+    justify-content: center;
+}
+.sbox{
+    margin-inline: 1rem;
+    background-color: #fff;
+    height: 100px;
+    width: 120px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(166, 191, 238);
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}
+.sbox h2{
+    font-size:4rem ;
+    font-weight: 600;
+    margin-bottom: 0;
+    margin-top: 20%;
+}
+
+.sbox p {
+    margin-top: 0;
+    color: #531a6d;
+    font-weight: 500;
+
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .stats
+    {   
+        
+        margin-top: 1vh;
+        padding: 0.5rem;
+        
+       
+    }
+    
+.set{
+    padding: 0.5rem  !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.stats h1{
+    font-size: 2rem;
+   letter-spacing: 1.5px;
+  
+   font-weight:600;
+   
+}
+.sbox{
+    margin: 0.5rem;
+    background-color: #fff;
+    height: 70px;
+    width: 84px;
+    
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}
+
+}
