@@ -20,6 +20,16 @@ body{
 }
 
 
+.srchicon svg
+{
+  height: 2rem !important;
+  width: 2rem !important;
+  position: absolute;
+  padding: 0.5rem;
+  top: 0%;
+  right: 1rem;
+}
+
 .form-input {
   display: flex;
   height: 2rem;
