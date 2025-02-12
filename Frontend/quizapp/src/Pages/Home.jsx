@@ -1,7 +1,7 @@
 import React, { useState  } from "react";
 import { useNavigate } from 'react-router-dom';
 import Header from "../Components/Header";
-import i1 from '../assets/dbms.png'
+import i1 from '../assets/i11.png'
 import i2 from '../assets/oops.png'
 import i3 from '../assets/dsa.png'
 import i4 from '../assets/os.png'

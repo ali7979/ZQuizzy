@@ -8,6 +8,7 @@
 body{
   padding-inline: 2rem;
   background-color: #e1b6f718;
+  overflow-x: hidden !important;
 }
 
 .header{
@@ -267,17 +268,18 @@ cursor: pointer;
 }
 
 .icon {
-  width: 40px;
-  height: 40px;
+  width: 2rem;
+  height: 2rem;
   background-color: #47a6e6;
   border-radius: 50%;
-  padding: 0.8rem;
+  padding: 1rem;
 }
 
 .icon img {
-  width: 100%;
-  height: 100%;
-}
+    height: 2rem !important;
+    width: 2rem !important;
+  }
+
 
 
 
@@ -753,6 +755,11 @@ font-size: smaller;
   height: 20px;
   padding: 0.4rem;
 }
+.icon img {
+  height: 20px !important;
+  width: 20px !important;
+}
+
 
 .team-image {
  /* Adjust image height for mobile screens */
