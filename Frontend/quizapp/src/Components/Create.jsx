@@ -11,18 +11,17 @@ const Create = () => {
   const [topic, settopic] = useState("")
 
   const handleTopic = (event) => {
-    const t = event.target.value;
-  settopic(t);
-  console.log(topic);
+  settopic(event.target.value);
       
     };
 
 
     const handleClick=()=>{
       
+      event.preventDefault(); 
+      if (!topic.trim()) return; 
+    
       const formattedTopic = topic.toLowerCase().replace(/\s+/g, '-');
-  
-      // Navigate to the Quiz component with the formatted topic
       navigate(`/pquiz/${formattedTopic}`);
     }
 
@@ -39,11 +38,11 @@ const Create = () => {
      data-aos-delay="500" src={logo} className="clogoimg" alt="logo" />
           </div>
           <div class="boxs">
-    <form name="search" className="form">
+    <form name="search" className="form" onSubmit={handleClick}>
     <img className="i" src={search}/>
 
         <input type="text" class="input" name="txt" onmouseout="this.value = ''; this.blur();" onChange={handleTopic}/>
-        <button type="submit" class="btn" onClick={handleClick}>
+        <button type="submit" class="btn" >
 
         <img className="magiciconn" src={magic}/>
 
