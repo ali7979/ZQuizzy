@@ -36,7 +36,7 @@ const generate=async()=>{
                   "content":"Topic: "+topic,
                 }
             ],
-            "model": "gemma2-9b-it",
+            "model": "llama-3.3-70b-versatile",
             "temperature": 1,
             "max_tokens": 1024,
             "top_p": 1,
